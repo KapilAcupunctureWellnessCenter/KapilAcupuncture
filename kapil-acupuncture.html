@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kapil Acupuncture Wellness Center</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* RESET */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f8f6;
+      color: #1c1c1c;
+      overflow-x: hidden;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+    /* NAVBAR */
+    nav {
+      width: 100%;
+      position: fixed;
+      top: 0; left: 0;
+      z-index: 1000;
+      padding: 12px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f5132;
+  margin-left: 12px;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: clamp(13px, 4vw, 17px);
+    margin-left: 8px;
+  }
+
+  .logo img {
+    height: 38px;
+  }
+
+  nav {
+    padding: 10px 4%;
+  }
+}
+
+    .logo img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: #198754; }
+
+    .nav-btn {
+      padding: 11px 22px;
+      background: #198754;
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.3s, transform 0.2s;
+    }
+    @media (max-width: 900px) {
+  .nav-btn { display: none; }
+}
+
+    .nav-btn:hover {
+      background: #0f5132;
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 8% 80px;
+      background:
+        linear-gradient(rgba(8,33,24,0.25), rgba(8,33,24,0.25)),
+        url('green_mountain.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero-content { max-width: 850px; }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.15;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(16px, 2vw, 20px);
+      line-height: 1.8;
+      opacity: 0.95;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .primary-btn {
+      padding: 16px 32px;
+      background: #ffd54f;
+      color: #111;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.3s;
+      display: inline-block;
+    }
+
+    .primary-btn:hover { transform: translateY(-4px); }
+
+    .secondary-btn {
+      padding: 16px 32px;
+      border: 1px solid rgba(255,255,255,0.5);
+      color: white;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      backdrop-filter: blur(8px);
+      transition: background 0.3s;
+      display: inline-block;
+    }
+
+    .secondary-btn:hover { background: rgba(255,255,255,0.1); }
+
+    /* SECTIONS */
+    section { padding: 100px 8%; }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      color: #0f5132;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      font-family: 'Inter', sans-serif;
+      color: #666;
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.7;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: white;
+      padding: 35px;
+      border-radius: 24px;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+    }
+
+    .card-icon {
+      width: 70px; height: 70px;
+      border-radius: 18px;
+      background: #e8f5ee;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+      margin-bottom: 22px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #198754;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.8;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    /* TREATMENTS section has a slightly different bg to visually separate */
+    #treatments { background: #fff; }
+
+    /* STATS */
+    .stats {
+      background: #0f5132;
+      border-radius: 35px;
+      color: white;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      padding: 60px;
+      text-align: center;
+    }
+
+    .stat h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 10px;
+    }
+
+    .stat p {
+      font-family: 'Inter', sans-serif;
+      opacity: 0.9;
+    }
+
+    /* REVIEWS */
+    #reviews {
+  padding-top: 40px;
+  }
+    .search-container {
+      max-width: 900px;
+      margin: 0 auto 50px;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .search-container h3 {
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      color: #0f5132;
+    }
+
+    #reviewSearch {
+      width: 100%;
+      padding: 16px 22px;
+      border: 1.5px solid #d4e8dc;
+      border-radius: 16px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      margin-top: 20px;
+      outline: none;
+      background: #fff;
+      transition: border-color 0.3s;
+    }
+
+    #reviewSearch:focus { border-color: #198754; }
+
+    .keyword-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .keyword-buttons button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      background: #e7f5ee;
+      color: #198754;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .keyword-buttons button:hover,
+    .keyword-buttons button.active {
+      background: #198754;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      margin: 40px auto 0;
+      max-width: 1100px;
+    }
+
+    .review-card {
+      background: white;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .review-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    }
+
+    .review-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    /* Initials avatar — no broken image */
+    .review-avatar {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: #e8f5ee;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #198754;
+      flex-shrink: 0;
+    }
+
+    .review-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .review-stars { color: #ffb400; font-size: 14px; margin-top: 3px; }
+    .review-date { font-size: 12px; color: #888; margin-top: 2px; }
+
+    .review-text {
+      font-family: 'Inter', sans-serif;
+      color: #555;
+      line-height: 1.8;
+      font-size: 0.92rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .review-card.expanded .review-text {
+      -webkit-line-clamp: unset;
+    }
+
+    .read-more {
+      margin-top: 14px;
+      display: inline-block;
+      color: #198754;
+      font-weight: 600;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+
+    .read-more:hover { color: #0f5132; }
+
+    .no-results {
+      display: none;
+      text-align: center;
+      color: #888;
+      font-size: 1rem;
+      padding: 2rem 0;
+      grid-column: 1 / -1;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(to right, #0f5132, #198754);
+      color: white;
+      border-radius: 35px;
+      text-align: center;
+      padding: 80px 40px;
+    }
+
+    .cta h2 { font-size: clamp(28px, 4vw, 48px); margin-bottom: 20px; }
+
+    .cta p {
+      font-family: 'Inter', sans-serif;
+      max-width: 700px;
+      margin: 0 auto 35px;
+      line-height: 1.8;
+    }
+
+    /* BOOKING FORM */
+    #contact {
+      background: #fff;
+      border-radius: 35px;
+      margin: 0 6% 80px;
+      padding: 70px 6%;
+      box-shadow: 0 10px 50px rgba(0,0,0,0.06);
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info h2 { font-size: 2rem; color: #0f5132; margin-bottom: 1rem; }
+
+    .contact-info > p {
+      font-family: 'Inter', sans-serif;
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 1rem 0;
+      border-bottom: 1px solid #e8f5ee;
+    }
+
+    .contact-detail:first-of-type { border-top: 1px solid #e8f5ee; }
+
+    .contact-detail-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: #e8f5ee;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+
+    .contact-detail-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+    }
+
+    .contact-detail-val {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: #222;
+      margin-top: 2px;
+    }
+
+    .form-group { margin-bottom: 1.1rem; }
+
+    .form-group label {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid #d4e8dc;
+      border-radius: 10px;
+      background: #f4f8f6;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.93rem;
+      color: #222;
+      outline: none;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #198754;
+      background: #fff;
+    }
+
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-submit {
+      width: 100%;
+      padding: 1rem;
+      background: #0f5132;
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .form-submit:hover { background: #198754; transform: translateY(-2px); }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 1.5rem;
+      background: #e8f5ee;
+      border-radius: 12px;
+      color: #0f5132;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      margin-top: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #071d14;
+      color: white;
+      padding: 70px 8% 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h3 {
+      margin-bottom: 20px;
+      color: #ffd54f;
+      font-size: 1.1rem;
+    }
+
+    .footer-col p,
+    .footer-col a {
+      font-family: 'Inter', sans-serif;
+      color: #d7d7d7;
+      text-decoration: none;
+      line-height: 2;
+      font-size: 0.9rem;
+    }
+
+    .footer-col a:hover { color: #ffd54f; }
+
+    .bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      text-align: center;
+      color: #888;
+      font-size: 0.85rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero h1 { font-size: 40px; }
+      .nav-links { display: none; }
+      .cta h2 { font-size: 32px; }
+      .contact-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+      #contact { margin: 0 4% 60px; }
+      .stats { padding: 40px 24px; }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 32px; }
+      .hero p { font-size: 16px; }
+      section { padding: 70px 6%; }
+      .section-title h2 { font-size: 28px; }
+      .form-row { grid-template-columns: 1fr; }
+      .cta { padding: 50px 24px; border-radius: 20px; }
+    }
+
+    /* PAYMENT MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+.modal-overlay.active { display: flex; }
+.modal-box {
+  background: #fff;
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  position: relative;
+  animation: modalPop 0.3s ease;
+}
+@keyframes modalPop {
+  from { transform: scale(0.85); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+.modal-close {
+  position: absolute; top: 14px; right: 18px;
+  font-size: 1.4rem; cursor: pointer;
+  color: #aaa; background: none; border: none;
+}
+.modal-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; color: #0f5132; margin-bottom: 0.4rem;
+}
+.modal-box p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem; color: #666;
+  margin-bottom: 1.5rem; line-height: 1.6;
+}
+.modal-qr {
+  width: 220px; height: 220px;
+  border-radius: 16px; border: 3px solid #e8f5ee;
+  object-fit: contain; margin: 0 auto 1.2rem; display: block;
+}
+.modal-upi {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem; color: #888; margin-bottom: 1.5rem;
+}
+.modal-upi span { font-weight: 600; color: #0f5132; }
+.modal-done {
+  width: 100%; padding: 0.9rem;
+  background: #0f5132; color: #fff;
+  border: none; border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem; font-weight: 600;
+  cursor: pointer; transition: background 0.3s;
+}
+.modal-done:hover { background: #198754; }
+/* MOBILE HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: #0f5132;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 72px; left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  z-index: 999;
+  padding: 1rem 0;
+  flex-direction: column;
+}
+
+.mobile-menu a {
+  padding: 1rem 8%;
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  font-size: 1rem;
+  border-bottom: 1px solid #e8f5ee;
+  display: block;
+  transition: color 0.3s;
+}
+
+.mobile-menu a:hover { color: #198754; }
+
+.mobile-menu.open { display: flex; }
+
+@media (max-width: 900px) {
+  .hamburger { display: flex; }
+
+  .modal-box {
+    padding: 1.5rem 1.2rem;
+    margin: 1rem;
+    max-width: 100%;
+  }
+
+  .modal-qr {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats {
+    grid-template-columns: 1fr 1fr;
+    padding: 30px 20px;
+    gap: 20px;
+  }
+
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .keyword-buttons button {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+
+  #contact {
+    margin: 0 4% 40px;
+    padding: 40px 5%;
+  }
+
+  .modal-box {
+    padding: 1.2rem 1rem;
+  }
+
+  .modal-qr {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+  <div class="logo">
+    <img src="69133.jpg" alt="Kapil Acupuncture Logo">
+    <span class="logo-text">Kapil <span>Acupuncture</span> Wellness Center</span>
+  </div>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#treatments">Treatments</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <a href="#contact" class="nav-btn">Book Appointment</a>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMenu()">Home</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#treatments" onclick="closeMenu()">Treatments</a>
+  <a href="#reviews" onclick="closeMenu()">Reviews</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Modern Acupuncture Care For A Healthier Life</h1>
+      <p>
+        Experience holistic healing, personalized treatment plans,
+        wellness consultations, and patient-centered acupuncture care
+        designed for modern lifestyles.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="primary-btn">Start Consultation</a>
+        <a href="#services" class="secondary-btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-title">
+      <h2>Our Wellness Services</h2>
+      <p>Combining traditional acupuncture techniques with modern healthcare experiences.</p>
+    </div>
+    <div class="cards">
+<div class="card" onclick="showConsultPopup()" style="cursor:pointer;">
+  <div class="card-icon">💻</div>
+  <h3>Online Consultation</h3>
+  <p>Secure and personalized online wellness consultations with professional guidance from the comfort of your home.</p>
+</div>
+
+<!-- ONLINE CONSULTATION POPUP -->
+<div class="modal-overlay" id="consultPopup">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeConsultPopup()">&#x2715;</button>
+    <h3>Online Consultation</h3>
+    <p style="font-family:'Inter',sans-serif; color:#666; font-size:0.9rem; margin-bottom:1.5rem;">
+      Contact us to book your online consultation!
+    </p>
+    <a href="tel:9009953331" class="modal-done" style="display:block; text-decoration:none; margin-bottom:0.8rem;">
+      📞 Call Us — 9009953331
+    </a>
+    <a href="https://wa.me/919009953331" target="_blank" class="modal-done" style="display:block; text-decoration:none; background:#25D366;">
+      💬 WhatsApp Us
+    </a>
+  </div>
+</div>
+<div class="card" onclick="showContactPopup()" style="cursor:pointer;">
+  <div class="card-icon">📅</div>
+  <h3>Appointment Booking</h3>
+  <p>Hassle-free scheduling system for clinic visits and virtual wellness sessions at your convenience.</p>
+</div>
+
+<!-- CONTACT POPUP -->
+<div class="modal-overlay" id="contactPopup">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeContactPopup()">&#x2715;</button>
+    <h3>Book Appointment</h3>
+    <p style="font-family:'Inter',sans-serif; color:#666; font-size:0.9rem; margin-bottom:1.5rem;">
+      Contact us directly to book your slot!
+    </p>
+    <a href="tel:9713663282" class="modal-done" style="display:block; text-decoration:none; margin-bottom:0.8rem;">
+      📞 Call Us — 9713663282
+    </a>
+    <a href="https://wa.me/919713663282" target="_blank" class="modal-done" style="display:block; text-decoration:none; background:#25D366;">
+      💬 WhatsApp Us
+    </a>
+  </div>
+</div>
+<div class="card" onclick="showBlogPopup()" style="cursor:pointer;">
+  <div class="card-icon">🌿</div>
+  <h3>Holistic Healing</h3>
+  <p>Explore wellness tips, acupuncture insights and health awareness posts from Dr. Kapil.</p>
+</div>
+
+<!-- BLOG POPUP WITH SLIDER -->
+<div class="modal-overlay" id="blogPopup" onclick="closeBlogOnOverlay(event)">
+  <div class="modal-box" style="max-width:500px; width:90%;">
+    <button class="modal-close" onclick="closeBlogPopup()">&#x2715;</button>
+<div style="position:relative; overflow:hidden; border-radius:14px; max-height:75vh;">      
+  <div id="blogSlider" style="display:flex; transition:transform 0.4s ease;">
+<img src="blog1.jpeg" style="min-width:100%; border-radius:14px; object-fit:contain; max-height:70vh;">        
+<img src="blog2.jpeg" style="min-width:100%; border-radius:14px; object-fit:contain; max-height:70vh;">
+        <img src="blog3.jpeg" style="min-width:100%; border-radius:14px; object-fit:contain; max-height:70vh;">
+        <img src="blog4.jpeg" style="min-width:100%; border-radius:14px; object-fit:contain; max-height:70vh;">
+        <img src="blog5.jpeg" style="min-width:100%; border-radius:14px; object-fit:contain; max-height:70vh;">
+        <img src="blog6.jpeg" style="min-width:100%; border-radius:14px; object-fit:contain; max-height:70vh;">
+        <img src="blog7.jpeg" style="min-width:100%; border-radius:14px; object-fit:contain; max-height:70vh;">
+        <img src="blog8.jpeg" style="min-width:100%; border-radius:14px; object-fit:contain; max-height:70vh;">
+        <img src="blog9.jpeg" style="min-width:100%; border-radius:14px; object-fit:contain; max-height:70vh;">
+      </div>
+      <button onclick="slideLeft()" style="position:absolute; left:8px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.9); border:none; border-radius:50%; width:36px; height:36px; font-size:20px; cursor:pointer;">‹</button>
+      <button onclick="slideRight()" style="position:absolute; right:8px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.9); border:none; border-radius:50%; width:36px; height:36px; font-size:20px; cursor:pointer;">›</button>
+    </div>
+    <div style="text-align:center; padding:12px 0 0; display:flex; justify-content:center; gap:6px;" id="blogDots"></div>
+  </div>
+</div>
+  </div>
+</section>
+
+  <!-- TREATMENTS -->
+  <section id="treatments">
+    <div class="section-title">
+      <h2>Our Treatments</h2>
+      <p>Traditional and modern therapies tailored <br>to your body's unique needs and health goals.</br></p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🌿</div>
+        <h3>Acupuncture Therapy</h3>
+        <p>Traditional needle therapy targeting meridian points to restore energy flow, reduce pain, and promote deep healing throughout the body.</p>
+      </div>
+<div class="card">
+  <div class="card-icon">✨</div>
+  <h3>Cupping Therapy</h3>
+  <p>A time-tested technique using suction cups to stimulate blood flow, release deep muscle tension, and draw out toxins for faster physical recovery.</p>
+</div>
+
+<div class="card">
+  <div class="card-icon">🕯️</div>
+  <h3>Moxibustion</h3>
+  <p>A gentle heat therapy using burning moxa herb near acupuncture points to warm the body, strengthen energy flow, and support immune and digestive health.</p>
+</div>
+      <div class="card">
+        <div class="card-icon">❤️‍🩹</div>
+        <h3>Wellness Consultation</h3>
+        <p>Comprehensive health assessments covering nutrition, lifestyle, and integrative strategies for your long-term wellbeing.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- STATS -->
+<section>
+  <div class="stats">
+    <div class="stat">
+      <h2>400+</h2>
+      <p>Happy Patients</p>
+    </div>
+    <div class="stat">
+      <h2>4.9 ★</h2>
+      <p>Google Rating</p>
+    </div>
+    <div class="stat">
+      <h2>25+</h2>
+      <p>Years Experience</p>
+    </div>
+<div class="stat">
+  <h2 style="font-size: 1.5rem; padding-top: 1.4rem;">Support Available</h2>
+  <p>Online & At Center</p>
+</div>
+</div>
+</section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="section-title">
+      <h1>Patient Reviews</h1>
+      <p>Real experiences shared by our patients through Google Reviews.</p>
+    </div>
+
+    <div class="search-container">
+      <h3>Search Reviews By Condition</h3>
+      <div class="keyword-buttons">
+        <button onclick="searchKeyword('knee pain', this)">Knee Pain</button>
+        <button onclick="searchKeyword('migraine', this)">Migraine</button>
+        <button onclick="searchKeyword('depression', this)">Depression</button>
+        <button onclick="searchKeyword('arthritis', this)">Arthritis</button>
+        <button onclick="searchKeyword('stress', this)">Stress</button>
+        <button onclick="searchKeyword('back pain', this)">Back Pain</button>
+        <button onclick="searchKeyword('stomach pain', this)">Stomach Pain</button>
+        <button onclick="searchKeyword('frozen shoulder', this)">Frozen Shoulder</button>
+        <button onclick="searchKeyword('brain stroke', this)">Brain Stroke</button>
+        <button onclick="searchKeyword('blood pressure', this)">Blood Pressure</button>
+        <button onclick="searchKeyword('asthma', this)">Asthma</button>
+      </div>
+      <input
+        type="text"
+        id="reviewSearch"
+        placeholder="Search condition or symptom..."
+        oninput="filterReviews()"
+      >
+    </div>
+
+    <div class="review-grid" id="reviewGrid">
+
+      <!-- Humesh Chawhan -->
+      <div class="review-card" data-keywords="joint pain arthritis thigh pain naturopathy burning">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">HC</div>
+            <div>
+              <div class="review-name">Humesh Chawhan</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">3 months ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            First of all, I am thankful to the professional and polite staff of the center. Now about the doctor — what to say, I really don't know. He is so talented and experienced that he creates a treatment plan while you are telling your problem. Such talent is impossible to find in Raipur, specifically in the field of Naturopathy. I was skeptical at first, my family too about burning sensation in my thighs. It was painful for days and nights without ending. However, I went to Dr. Kapil, consulted, started treatment, and saw results in the first 3 sessions only.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Amit Jain -->
+      <div class="review-card" data-keywords="stomach pain digestion indigestion intestine acupuncture surgery">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">AJ</div>
+            <div>
+              <div class="review-name">Amit Jain</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">7 months ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            For a long period, I was suffering from severe stomach pain. Despite undergoing several tests, none of the doctors were able to identify the exact cause. Specialist doctors strongly advised immediate surgery. However, after treatment from Dr. Atish Kapil and 9 sessions over 45 days, another CT scan showed everything completely normal. I am truly grateful.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Muktak Agrawal -->
+      <div class="review-card" data-keywords="migraine headache sleep stress frequency severity">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">MA</div>
+            <div>
+              <div class="review-name">Muktak Agrawal</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">2 weeks ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            I recently underwent acupuncture treatment for my migraine, and I wanted to share my experience. I had been struggling with frequent and intense migraine episodes for quite some time, and conventional treatments were providing only temporary relief. After only three sessions, I noticed big improvement in both the frequency and severity of my headaches. The sessions were calming and professionally handled, and Kapil sir took the time to understand my condition in detail before starting the treatment. Now it's been a month, I feel relief, improved sleep, and an overall sense of well-being. I recommend considering acupuncture for root cause treatment. Overall, a positive and worthwhile experience.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Naveen Vardani -->
+      <div class="review-card" data-keywords="knee pain ligament injury acupuncture relief sittings">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">NV</div>
+            <div>
+              <div class="review-name">Naveen Vardani</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">2 weeks ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            My name is Naveen Vardani. I had been suffering from right knee pain for the past 9 months. Even after trying many treatments, I did not get relief. Doctors told me that it was a ligament injury, which was confirmed by MRI. Then I received acupuncture treatment from Dr. Atish Kapil. After just 3 sittings, my pain was gone. The doctor advised me a course of 10 sittings. Today, I have completed 8 sittings and I feel completely fine. I would like to thank Dr. Kapil and his team.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Dr. Apurawa Agrawal -->
+      <div class="review-card" data-keywords="knee pain acupuncture relief assessment">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">AA</div>
+            <div>
+              <div class="review-name">Dr. Apurawa Agrawal</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">5 months ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            Doctor took detailed assessment before starting treatment. I got relief in my knee pain. I would recommend this clinic for acupuncture treatment.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Rajkumar Parwani -->
+      <div class="review-card" data-keywords="arthritis knee pain joint pain stiffness acupuncture">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">RP</div>
+            <div>
+              <div class="review-name">Rajkumar Parwani</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">6 months ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            Bhawna: I have been suffering from arthritis, knee and joints pain and after taking acupuncture treatment from Dr. Kapil, I am now feeling much more relaxed and comfortable. The sessions have really helped reduce my pain and stiffness. I'm thankful for the care and effective treatment provided. Highly recommended!
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Shashi Varvandkar -->
+      <div class="review-card" data-keywords="blood pressure bp high bp sugar diabetes knee pain frozen shoulder acupuncture">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">SV</div>
+            <div>
+              <div class="review-name">Shashi Varvandkar</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">2 years ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            My personal experience — my High BP and blood sugar has been controlled to almost normal limits in last two months by Dr Kapil. This has been achieved through acupuncture treatment and without any other medication. Similarly knee pain is in control. I am fully satisfied with the treatment. Another success story — Lakshman, my driver, complained that he was not able to lift his right hand over waist level and had loss of strength. I recommended him to visit Dr Kapil. In just 8 sittings he is in a position to raise his hand normally above his head and rotate freely! Very effective and accurate treatment by Dr Kapil. I would definitely recommend this place.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Pushkal Agrawal -->
+      <div class="review-card" data-keywords="knee pain acupuncture sessions relief holistic">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">PA</div>
+            <div>
+              <div class="review-name">Pushkal Agrawal</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">3 years ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            My mother visited Dr. Kapil for her knee pain treatment and after 3-4 acupuncture sessions she is feeling better than before and says even the pain has reduced significantly. Dr. Kapil gives very simple yet very effective advices which are not so tough to follow in our day to day lives.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- RIDDHI kochar -->
+      <div class="review-card" data-keywords="back pain acupuncture relief natural pain relief">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">RK</div>
+            <div>
+              <div class="review-name">Riddhi Kochar</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">5 months ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            Praveen Kochar: I had sudden back pain and decided to try acupuncture, and it gave me amazing relief. The clinic was very neat, organised, and calming. The practitioner handled everything gently and professionally, and I felt comfortable throughout the session. I could feel the difference immediately after the treatment. Highly recommend it for anyone looking for quick and natural pain relief.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Deepak Chaora -->
+      <div class="review-card" data-keywords="back pain low back pain spinning head bed rest energy sleep appetite">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">DC</div>
+            <div>
+              <div class="review-name">Deepak Chaora</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">7 months ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            An unbearable continuous low back pain with spinning head at 64, compelled to total bed rest for 5 days. Luckily dragged to Kapil Sir's Clinic by my office boss. 1st session was a bit soothing to my physical and mental state. 2nd–3rd session gave me unexpected tremendous relief. After 4th–5th session, totally forgot the miseries and sufferings faced. Now, on going through 6th–7th session feeling very very energetic and confident. Enjoying full appetite with sound sleep. In my opinion, visit to Kapil Sir's Clinic is the gateway for the departure of all health issues. A place where one finds most proper treatment with utmost care and hospitality from Kapil Sir and his clinic PARIVAR.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Tamanna Mandhwani -->
+      <div class="review-card" data-keywords="back pain acupressure peaceful sessions relief">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">TM</div>
+            <div>
+              <div class="review-name">Tamanna Mandhwani</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">a year ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            It was an amazing experience to be treated by Dr. Kapil sir. The sessions were so peaceful and the nurses were kind and helpful. My back now sure does feel better. I recommend acupressure 100%!
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Harish Vashisht -->
+      <div class="review-card" data-keywords="back pain lower back pain stiffness physiotherapy acupuncture healing">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">HV</div>
+            <div>
+              <div class="review-name">Harish Vashisht</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">a year ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            About me — I have suffered from severe lower back pain and stiffness since 2017, despite consulting several physiotherapists. Honestly, I was skeptical about acupuncture, but I decided to give it a try without much confidence. From day one, the doctor listened attentively, understood my concerns deeply, and addressed the root cause of my problem. After just three sessions, I experienced an incredible transformation — it felt like being reborn, as if the pain had never existed. I would highly recommend Dr Kapil for his expertise, care, and the kindness of the staff. Thank you for giving me my life back!
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- BAJAJ TRAVELLING -->
+      <div class="review-card" data-keywords="frozen shoulder shoulder pain acupuncture relief">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">BT</div>
+            <div>
+              <div class="review-name">Bajaj Travelling</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">a month ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            I am suffering from frozen shoulder since last 3 months but the pain was increasing day by day. Someone told me about Dr Kapil ji and acupuncture. In the last 12 days I am going there and feeling better and hoping that Dr Kapil ji will cure my problem.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Pratibha Dongre -->
+      <div class="review-card" data-keywords="frozen shoulder shoulder pain healed treatment">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">PD</div>
+            <div>
+              <div class="review-name">Pratibha Dongre</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">3 years ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            My mother was suffering from frozen shoulder problem and sir's treatment was so effective that the problem was healed in 2 months. Thank you sir for your advice and treatment.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Vansh Chaudhary -->
+      <div class="review-card" data-keywords="frozen shoulder shoulder pain fully recovered acupuncture diagnosis">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">VC</div>
+            <div>
+              <div class="review-name">Vansh Chaudhary</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">2 years ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            Amazing!! My mother had frozen shoulder — fully recovered now after his treatment. Diagnosis is accurate. Will be helpful for sure.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Piyush Agrawal -->
+      <div class="review-card" data-keywords="frozen shoulder cervical injury holistic well being acupuncture">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">PA</div>
+            <div>
+              <div class="review-name">Piyush Agrawal</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">4 years ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            I will always recommend Dr. Kapil to everyone as apart from curing your immediate medical condition, he also guides for overall holistic well being. He has ensured immediate effective treatment for my frozen shoulder and cervical injury.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Garima Mishra -->
+      <div class="review-card" data-keywords="stomach pain polyp spine nerve depression migraine teeth ear pain recovery">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">GM</div>
+            <div>
+              <div class="review-name">Garima Mishra</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">3 years ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            I was diagnosed with polyp in stomach with severe pain and inflammation and also in my spine multiple nerves were pressed causing severe spine pain. After coming to sir my pain has cured. Also I was suffering from severe depression and migraine problem — with sir's guidance and treatment it has cured. My teeth and ear joint pain has also cured. I am now in my best position of recovery. Recovered almost 95% now. Thank you sir.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Rupika Joshi -->
+      <div class="review-card" data-keywords="neuro muscular back pain migraine asthma bronchitis varicose veins heart acupuncture">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">RJ</div>
+            <div>
+              <div class="review-name">Rupika Joshi</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">3 years ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            Dr. Kapil has truly improved the condition of my father. He suffers from a neuro muscular condition that doctors across the best hospitals in India could not help with for 5 years. After going to possibly the best neuro specialists in Mumbai, Bangalore and Vellore, we heard of Dr. Kapil and began his treatment. He has helped my father manage his body better — he is able to walk better, constant body pain has reduced, limbs are functioning better, and sleep is better. My mother too regularly goes to Dr. Kapil. She suffers from bronchitis asthma, varicose veins and is also a heart patient. With regular sessions, they have both received proper attention and are improving every day. He even helped me overcome my migraine issue and constant back pain. As a family we are truly grateful. Highly recommend him for all issues — across all types of diseases and dysfunctions.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Amit Agrawal -->
+      <div class="review-card" data-keywords="migraine parkinson disease acupuncture improvement">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">AA</div>
+            <div>
+              <div class="review-name">Amit Agrawal</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">4 years ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            Dr Kapil is the best option for migraine. My father is suffering from Parkinson's disease. I went to Dr Kapil and after the first sitting there were so many improvements in my father. My father is smiling and feeling better. More improvement in my father. Thank you sir.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Digital Print -->
+      <div class="review-card" data-keywords="brain stroke blood pressure bp kidney dialysis acupuncture recovery">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">DP</div>
+            <div>
+              <div class="review-name">Digital Print</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">a year ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            My father aged 72 had a brain stroke last month. CT scan showed large hypodense area in left parietal lobe. His BP was very high and medicine was not working effectively. I know Dr. Kapil since 1998 — my cousin was treated effectively for kidney failure and after treatment her dialysis was stopped. I contacted Dr. Kapil for my father on 6-10-2023. From the first sitting my father got continuous benefits. His BP came under control and brain functionality improved after 3 to 4 sittings. Now my father is able to live a normal and independent life after stroke — only because of Dr. Kapil's vast knowledge and experience. Thank you sir.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Kamal Agrawal -->
+      <div class="review-card" data-keywords="brain stroke paralysis kidney ckd dialysis acupuncture chronic disease">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">KA</div>
+            <div>
+              <div class="review-name">Kamal Agrawal</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">2 years ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            I highly recommend Dr Kapil for his treatment of many chronic diseases like CKD, paralysis, brain stroke. His acupuncture treatment is amazing and highly effective. Dr Kapil treated my father who is a chronic kidney patient on regular dialysis. My father was also not able to speak, not able to drink water (feeding through Ryle's tube) and not responding to any command. After 3 sessions of 30 minutes each, my father is now well responding, able to eat (Ryle's tube removed) and also follows commands. Thanks Kapil sir for your support and treatment.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Rajesh Jain -->
+      <div class="review-card" data-keywords="brain stroke brain hemorrhage surgery acupuncture recovery hospital">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">RJ</div>
+            <div>
+              <div class="review-name">Rajesh Jain</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">3 years ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            Alternate therapy can prove out and give unexpected results as we have received in case of my father who suffered a major brain hemorrhage. Doctors advised brain surgery but we did not opt for it. Thanks to the personal advice given by Dr HP Sinha and permitting Dr Aatish Kapil to do acupuncture therapy at the hospital. My father after a gap of 12 days (9 days in ventilator) started responding. We are hopeful he will come out of the situation. Update as of 19th November: My father was discharged on 31st October after 44 days of hospitalisation. He is presently at home and recovering. It is worth noting that my father recovered in the same manner as told by Dr Kapil, which built our faith in this alternative therapy. We feel grateful to him.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Arun Jha -->
+      <div class="review-card" data-keywords="blood pressure bp diabetes thyroid ckd kidney neuropathy feet pain acupuncture creatinine">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">AJ</div>
+            <div>
+              <div class="review-name">Arun Jha</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">9 months ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            Age 72. Suffering from BP, diabetes, thyroid since last 34 years. Corona in 2021 affected my kidneys and since then suffering from CKD. Diabetic neuropathy started troubling my feet badly — all allopathic treatment went in vain. So I joined Kapil Acupuncture Clinic. After 5 sittings my both toes were relieved from pain. After ten sessions my creatinine level came down to 2.1 from 4.7 — it is not less than a miracle. Overall after ten sessions I got relief from high creatinine level, constipation, diabetic neuropathy and better control over BP and sugar. All staff is very sincere and very humble. Great job done by Dr Kapil.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Juggal Patel -->
+      <div class="review-card" data-keywords="brain stroke icu seizures ventilator blood pressure sugar acupuncture recovery">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">JP</div>
+            <div>
+              <div class="review-name">Juggal Patel</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">2 years ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            My father was in ICU for 2 months. His condition was not well because of shocks and seizures — he was not responding properly. He was in the ventilator because of continuous shocks and internal bleeding. After Dr Atish Kapil's acupuncture therapy, he was taken out from the ventilator and started responding much better. BP and sugar came under control. The ICU doctor told us they are now giving lighter medicine. He started treatment on 26 June 2023 and condition has been continuously improving since then.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Sonia Dammani -->
+      <div class="review-card" data-keywords="pcod blood pressure bp pigmentation acupuncture cured">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">SD</div>
+            <div>
+              <div class="review-name">Sonia Dammani</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">2 years ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            When I met Dr Kapil for the first time, I was having multiple issues such as PCOD, BP and pigmentation. Dr Kapil cured me completely in a few sittings. Thanks a lot sir. One thing is very good about Dr Kapil — first he diagnoses the disease, then treats. If not needed, he directly says no.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <!-- Pushker Shukla -->
+      <div class="review-card" data-keywords="back pain blood pressure bp acupuncture relief sessions">
+        <div>
+          <div class="review-top">
+            <div class="review-avatar">PS</div>
+            <div>
+              <div class="review-name">Pushker Shukla</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-date">4 years ago</div>
+            </div>
+          </div>
+          <div class="review-text">
+            Dr. Kapil sir is polite in nature and a master in acupuncture. I was suffering from back pain and BP for the last one year. After just 3 sittings, pain reduced almost 70% and BP is also under control. Thanks to the doctor and team.
+          </div>
+        </div>
+        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <p class="no-results" id="noResults">No reviews found for that condition. Try a different keyword.</p>
+
+    </div>
+
+    <div style="text-align:center; margin-top: 36px;" id="showAllWrap">
+      <button onclick="showAllReviews()" style="
+        padding: 14px 36px;
+        background: white;
+        color: #198754;
+        border: 2px solid #198754;
+        border-radius: 14px;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+      " onmouseover="this.style.background='#198754';this.style.color='white'" onmouseout="this.style.background='white';this.style.color='#198754'">
+        View All Reviews (25) ↓
+      </button>
+    </div>
+
+  </section>
+
+  <script>
+    const DEFAULT_SHOW = 3;
+    let isFiltered = false;
+
+    function initReviews() {
+      const cards = document.querySelectorAll('.review-card');
+      cards.forEach((card, i) => {
+        card.style.display = i < DEFAULT_SHOW ? 'flex' : 'none';
+      });
+      document.getElementById('showAllWrap').style.display = 'block';
+    }
+
+    function showAllReviews() {
+      document.querySelectorAll('.review-card').forEach(card => {
+        card.style.display = 'flex';
+      });
+      document.getElementById('showAllWrap').style.display = 'none';
+      isFiltered = false;
+    }
+
+    function searchKeyword(keyword, btn) {
+      const input = document.getElementById('reviewSearch');
+      if (input.value.toLowerCase() === keyword.toLowerCase()) {
+        input.value = '';
+        btn.classList.remove('active');
+        resetToDefault();
+      } else {
+        input.value = keyword;
+        document.querySelectorAll('.keyword-buttons button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filterReviews();
+      }
+    }
+
+    function filterReviews() {
+      const input = document.getElementById('reviewSearch').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.review-card');
+      let visibleCount = 0;
+
+      if (!input) {
+        resetToDefault();
+        document.querySelectorAll('.keyword-buttons button').forEach(b => b.classList.remove('active'));
+        return;
+      }
+
+      isFiltered = true;
+      cards.forEach(card => {
+        const keywords = card.getAttribute('data-keywords').toLowerCase();
+        const text = card.querySelector('.review-text').textContent.toLowerCase();
+        const match = keywords.includes(input) || text.includes(input);
+        card.style.display = match ? 'flex' : 'none';
+        if (match) visibleCount++;
+      });
+
+      document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
+      document.getElementById('showAllWrap').style.display = 'none';
+    }
+
+    function resetToDefault() {
+      isFiltered = false;
+      const cards = document.querySelectorAll('.review-card');
+      cards.forEach((card, i) => {
+        card.style.display = i < DEFAULT_SHOW ? 'flex' : 'none';
+      });
+      document.getElementById('noResults').style.display = 'none';
+      document.getElementById('showAllWrap').style.display = 'block';
+    }
+
+    function toggleReadMore(button) {
+      const card = button.closest('.review-card');
+      card.classList.toggle('expanded');
+      button.innerText = card.classList.contains('expanded') ? 'Read Less' : 'Read More';
+    }
+
+    window.addEventListener('DOMContentLoaded', initReviews);
+  </script>
+
+
+
+  <!-- CTA -->
+  <section>
+    <div class="cta">
+      <h2>Begin Your Wellness Journey Today</h2>
+      <p>Book your consultation and experience modern acupuncture treatment focused on recovery, balance, and holistic healing.</p>
+      <a href="#contact" class="primary-btn">Book Appointment</a>
+    </div>
+  </section>
+
+  <!-- CONTACT / BOOKING FORM -->
+  <div id="contact">
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <h2>Book Your Appointment</h2>
+        <p>Ready to begin your healing journey? Fill in the form and we'll get back to you to confirm your slot.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div>
+            <div class="contact-detail-label">Location</div>
+            <div class="contact-detail-val">Sector 1, Near Panchmukhi Hanuman Mandir, Shankar Nagar, Raipur, Chhattisgarh</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📞</div>
+          <div>
+            <div class="contact-detail-label">Phone</div>
+            <div class="contact-detail-val">9009953331 &nbsp;/&nbsp; 9713663282</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🕐</div>
+          <div>
+            <div class="contact-detail-label">Hours</div>
+            <div class="contact-detail-val">Mon–Fri: 9:30 AM – 1:00 PM<br>Mon–Fri: 6:00 PM to 8:00 PM<br>Saturday: 9:30 AM – 2:00 PM</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" id="fname" placeholder="Your first name">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" id="lname" placeholder="Your last name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="phone" placeholder="+91 00000 00000">
+        </div>
+        <div class="form-group">
+          <label>Email (optional)</label>
+          <input type="email" id="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Service of Interest</label>
+          <select id="service">
+            <option value="">Select a service...</option>
+            <optgroup label="Services">
+              <option>Online Consultation</option>
+              <option>Appointment Booking</option>
+              <option>Holistic Healing</option>
+            </optgroup>
+            <optgroup label="Treatments">
+              <option>Acupuncture Therapy</option>
+              <option>Cupping</option>
+              <option>Moxibustion</option>
+              <option>Wellness Consultation</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Describe Your Concern</label>
+          <textarea id="concern" placeholder="Briefly describe your health concerns or what you'd like to address..."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm()">Request Appointment →</button>
+        <div class="form-success" id="formSuccess">
+          ✅ Thank you! We'll call you within 48 hours to confirm your appointment.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Kapil Acupuncture & Wellness Center</h3>
+        <p>Professional acupuncture and wellness care focused on holistic healing and modern patient experiences in Raipur.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p>Shankar Nagar, Raipur</p>
+        <p>📞 9009953331</p>
+        <p>📞 9713663282</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <a href="#home">Home</a><br>
+        <a href="#services">Services</a><br>
+        <a href="#treatments">Treatments</a><br>
+        <a href="#reviews">Reviews</a><br>
+        <a href="#contact">Appointments</a>
+      </div>
+    </div>
+    <div class="bottom">
+      © 2026 Kapil Acupuncture Wellness Center — All Rights Reserved
+    </div>
+  </footer>
+
+ <script>
+
+function submitForm() {
+  const fname = document.getElementById('fname').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const service = document.getElementById('service').value;
+
+  if (!fname || !phone || !service) {
+    alert('Please fill in your name, phone number, and select a service.');
+    return;
+  }
+
+  const data = {
+    name: fname + ' ' + document.getElementById('lname').value.trim(),
+    phone: phone,
+    email: document.getElementById('email').value.trim(),
+    service: service,
+    concern: document.getElementById('concern').value.trim()
+  };
+
+  fetch('https://formspree.io/f/mgodjryw', {  // 👈 paste your endpoint here
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+    document.getElementById('paymentModal').classList.add('active');
+  })
+  .catch(() => {
+    alert('Something went wrong. Please call us directly.');
+  });
+}
+  
+function closeModal() {
+  document.getElementById('paymentModal').classList.remove('active');
+  document.querySelector('.form-submit').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+  setTimeout(() => {
+    ['fname','lname','phone','email','concern'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('service').value = '';
+    document.querySelector('.form-submit').style.display = 'block';
+    document.getElementById('formSuccess').style.display = 'none';
+  }, 4000);
+}
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+function showContactPopup() {
+  document.getElementById('contactPopup').classList.add('active');
+}
+
+function closeContactPopup() {
+  document.getElementById('contactPopup').classList.remove('active');
+}
+function showConsultPopup() {
+  document.getElementById('consultPopup').classList.add('active');
+}
+
+function closeConsultPopup() {
+  document.getElementById('consultPopup').classList.remove('active');
+}
+let currentSlide = 0;
+const totalSlides = 9;
+
+function showBlogPopup() {
+  document.getElementById('blogPopup').classList.add('active');
+  buildDots();
+  goToSlide(0);
+}
+
+function closeBlogPopup() {
+  document.getElementById('blogPopup').classList.remove('active');
+}
+
+function closeBlogOnOverlay(event) {
+  if (event.target === document.getElementById('blogPopup')) {
+    closeBlogPopup();
+  }
+}
+
+function buildDots() {
+  const dots = document.getElementById('blogDots');
+  dots.innerHTML = '';
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('span');
+    dot.style.cssText = `width:8px; height:8px; border-radius:50%; background:${i===0?'#198754':'#ccc'}; cursor:pointer; display:inline-block;`;
+    dot.onclick = () => goToSlide(i);
+    dots.appendChild(dot);
+  }
+}
+
+function goToSlide(n) {
+  currentSlide = n;
+  document.getElementById('blogSlider').style.transform = `translateX(-${n * 100}%)`;
+  document.querySelectorAll('#blogDots span').forEach((d, i) => {
+    d.style.background = i === n ? '#198754' : '#ccc';
+  });
+}
+
+function slideLeft() {
+  goToSlide(currentSlide === 0 ? totalSlides - 1 : currentSlide - 1);
+}
+
+function slideRight() {
+  goToSlide(currentSlide === totalSlides - 1 ? 0 : currentSlide + 1);
+}
+
+
+</script>
+
+
+  <!-- PAYMENT MODAL -->
+  <div class="modal-overlay" id="paymentModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+      <h3>Complete Your Booking</h3>
+      <p>Scan the QR code to pay the consultation fee via UPI. Share the payment screenshot with us to confirm your slot.</p>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=upi://pay?pa=9009953331@upi%26pn=Kapil%2520Acupuncture%26am=500%26cu=INR%26tn=Consultation%2520Fee" 
+     alt="UPI QR Code" class="modal-qr">  
+     <a href="upi://pay?pa=9009953331@upi&pn=Kapil%20Acupuncture&am=500&cu=INR&tn=Consultation%20Fee" 
+   class="modal-done" style="display:block; text-decoration:none; margin-bottom:1rem;">
+  💳 Pay ₹500 on Mobile
+</a>    
+     <div class="modal-upi">Pay via UPI &nbsp;|&nbsp; <span>Google Pay / PhonePe / Paytm</span></div>
+      <button class="modal-done" onclick="closeModal()">Done - I've Paid</button>
+    </div>
+  </div>
+
+
+</body>
+</html>
