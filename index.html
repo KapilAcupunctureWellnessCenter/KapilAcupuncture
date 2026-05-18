@@ -1794,22 +1794,37 @@ function slideRight() {
 </script>
 
 
-  <!-- PAYMENT MODAL -->
-  <div class="modal-overlay" id="paymentModal">
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeModal()">&#x2715;</button>
-      <h3>Complete Your Booking</h3>
-      <p>Scan the QR code to pay the consultation fee via UPI. Share the payment screenshot with us to confirm your slot.</p>
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=upi://pay?pa=9009953331@upi%26pn=Kapil%2520Acupuncture%26am=500%26cu=INR%26tn=Consultation%2520Fee" 
-     alt="UPI QR Code" class="modal-qr">  
-     <a href="upi://pay?pa=9009953331@upi&pn=Kapil%20Acupuncture&am=500&cu=INR&tn=Consultation%20Fee" 
-   class="modal-done" style="display:block; text-decoration:none; margin-bottom:1rem;">
-  💳 Pay ₹500 on Mobile
-</a>    
-     <div class="modal-upi">Pay via UPI &nbsp;|&nbsp; <span>Google Pay / PhonePe / Paytm</span></div>
-      <button class="modal-done" onclick="closeModal()">Done - I've Paid</button>
+<!-- PAYMENT MODAL -->
+<div class="modal-overlay" id="paymentModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+    <h3>Complete Your Payment</h3>
+    <p>Please pay the trial consultation fee of <strong>₹500</strong> using the details below:</p>
+
+    <div style="background:#f4f8f6; border-radius:14px; padding:1.2rem; margin:1rem 0; text-align:left;">
+      <p style="font-family:'Inter',sans-serif; font-size:0.9rem; color:#555; margin-bottom:0.6rem;">
+        💳 <strong style="color:#0f5132;">UPI ID:</strong> 9009953331@upi
+      </p>
+      <p style="font-family:'Inter',sans-serif; font-size:0.9rem; color:#555; margin-bottom:0.6rem;">
+        📞 <strong style="color:#0f5132;">Phone:</strong> 9009953331
+      </p>
+      <p style="font-family:'Inter',sans-serif; font-size:0.9rem; color:#555;">
+        👤 <strong style="color:#0f5132;">Pay to:</strong> Dr. Atish Kapil
+      </p>
     </div>
+
+    <p style="font-family:'Inter',sans-serif; font-size:0.82rem; color:#888; margin-bottom:1.2rem;">
+      After payment, share the screenshot on WhatsApp to confirm your slot.
+    </p>
+
+    <a href="https://wa.me/919713663282" target="_blank" class="modal-done" 
+       style="display:block; text-decoration:none; background:#25D366; margin-bottom:0.8rem;">
+      💬 Share Screenshot on WhatsApp
+    </a>
+
+    <button class="modal-done" onclick="closeModal()">Done — I've Paid ✓</button>
   </div>
+</div>
 
 
 </body>
